@@ -30,13 +30,11 @@ export class RandomfieldsComponent implements OnInit {
       let n = parseInt(params.get('n'));
       this.n = n;
     })
-    console.log(this.n);
     this.resultantArray = [];
     for (let i = 0; i < this.n * 2; i++) {
       let inputType = this.inputArray[Math.floor(Math.random() * 5) + 1];
       this.resultantArray.push({ type: inputType, ngModData: '' });
     }
-    console.log(this.resultantArray);
   }
 
   submitData() {
