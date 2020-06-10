@@ -1,0 +1,27 @@
+<div class="container pt-2">
+  <app-topbar></app-topbar>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="row">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div *ngFor="let type of resultantArray; let i = index" class="p-2 m-1">
+        <div *ngIf="type.type == 'input'">
+          <input type="{{ type.type }}" [(ngModel)]="type.ngModData" />
+        </div>
+        <div *ngIf="type.type == 'combo'">
+          <select [(ngModel)]="type.ngModData">
+            <option value="selection1">Selection1</option>
+            <option value="selection2">Selection2</option>
+          </select>
+        </div>
+      </div>
+      <button (click)="submitData()" class="btn btn-success">
+        Click to Submit
+      </button>
+      <button (click)="resetData()" class="btn btn-danger">Reset</button>
+    </div>
+  </div>
+</div>
